@@ -20,4 +20,12 @@
     });
 
 
+    $("#reverse-button").on('click', function () {
+        var textFromTextbox = $("#reverse-textbox").val();
+        $.get("/home/reverse", { text: textFromTextbox }, function (result) {
+            $("#reverse-text").text(result.reversed);
+        });
+    });
+
+
 });

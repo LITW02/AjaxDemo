@@ -48,11 +48,13 @@ namespace MvcApplication26.Controllers
 
         public ActionResult CheckUsername(string username)
         {
-            var obj = new { isGood = username.Length == 5};
-
+            var obj = new { isGood = username.Length == 5 };
             return Json(obj, JsonRequestBehavior.AllowGet);
+        }
 
-
+        public ActionResult Reverse(string text)
+        {
+            return Json(new { reversed = new string(text.Reverse().ToArray()) }, JsonRequestBehavior.AllowGet);
         }
     }
 }
